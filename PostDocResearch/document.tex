@@ -28,19 +28,22 @@
 \usepackage{microtype} 			% para melhorias de justificação
 \usepackage{listings}           % para criar elementos do tipo lista            
 
+\usepackage{hyperref}		
+\hypersetup{hidelinks}
+\usepackage{url}
+\usepackage{breakurl}		
+\usepackage{nomencl}
+
 % ---
 % Pacotes de citações
 % ---
 \usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
-\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+\usepackage[num]{abntex2cite}	% Citações padrão ABNT
+\citebrackets[]
 
-%\usepackage{hyperref}		
-%\hypersetup{hidelinks}
-\usepackage{url}		
-\hypersetup{hidelinks}
 
- \makeatletter
- \makeatother
+%\makeatletter
+%\makeatother
 
 \autor{José Renato Villela Dantas}
 
@@ -52,13 +55,40 @@
 % 
 \data{2017}
 
+% ---
+% compila o indice
+% ---
+\makeindex
+% ---
+\makenomenclature
+
 \begin{document}
+	
+% ----
+% Retira espaço extra obsoleto entre as frases.
+% ----
+\frenchspacing
 
 \selectlanguage{english}
 % 
- \imprimircapa
+\imprimircapa
 
 % \folhaderosto
+
+% ---
+% inserir lista de abreviaturas e siglas
+% ---
+\renewcommand{\nomname}{List of Acronymous}
+\pdfbookmark[0]{\nomname}{las}
+\printnomenclature
+\cleardoublepage
+% ---
+
+% 
+% \listoffigures
+% 
+% \listoftables
+% 
 
 % ---
 % inserir o sumario
@@ -68,20 +98,17 @@
 \cleardoublepage
 % ---
 
-% 
-% \listoffigures
-% 
-% \listoftables
-% 
-% \listadesiglas
-
-
+% ---
+% elementos textuais
+% ---
 \include{ideasandtasks}
-\include{webserviceinvocation}
 \include{elasticsearch}
+%\include{webserviceinvocation}
+% ---
+
 % 
 % \bibliographystyle{abnt-alf}
- \bibliography{Mendeley}
+% \bibliography{Mendeley}
 
 
 

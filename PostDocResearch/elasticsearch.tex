@@ -10,12 +10,22 @@
 
 \section{Elasticsearch applications}
 \label{sec:applications}
+We obtained a list of practical applications after a brief consultation to the article \textit{Elasticsearch} in the Portuguese Wikipedia\cite{wiki:pt:elasticsearch} and in the English Wikipedia\cite{wiki:en:elasticsearch}.
 
-\subsection{Application as the main database}
+\subsection*{Application as the main database}
 \label{sec:appmaindb}
 
-\subsection{Application with an external database}
+\subsection*{Application with an external database}
 \label{sec:appexternaldb}
+The applications in this section adopt the Elasticsearch only as a search engine, indexing documents from external databases.
+
+\subsubsection*{Center for Open Science}
+\label{sec:cos}
+The Center for Open Science \nomenclature{COS}{Center for Open Science} (COS)\footnote{\url{http://cos.io}} is a non-profit technology organization dedicated to improving the alignment between scientific values and scientific practices\cite{elasticsearch:cos}.
+
+COS adopted Elasticsearch as the primary search engine for all content on the \nomenclature{OSF}{Open Science Framework} Open Science Framework (OSF) \footnote{\url{http://osf.io}}, internal and external. All registered users and components of projects are indexed by Elasticsearch.
+
+The case study did not mention which database stores the content to be indexed.
 
 \section{Benefits of Elasticsearch}
 \label{sec:benefits}
@@ -25,3 +35,5 @@
 
 \section{Conclusion}
 \label{sec:conclusion}
+
+\bibliography{elasticsearch}
